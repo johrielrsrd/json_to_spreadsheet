@@ -10,7 +10,7 @@ def read_json_file():
             json_data = json.load(file)
 
         for item in json_data:
-            item_list = [item["profile"]["name"], item["email"], item["profile"]["address"]]
+            item_list = [item["profile"]["name"], item["email"], item["profile"]["address"], item["profile"]["company"]]
             json_list.append(item_list)
 
         return json_list
@@ -28,6 +28,7 @@ def create_spreadsheet(json_list_data):
     sheet["A1"] = "Name"
     sheet["B1"] = "Email"
     sheet["C1"] = "Address"
+    sheet["D1"] = "Company"
 
     sheet_data = json_list_data
 
